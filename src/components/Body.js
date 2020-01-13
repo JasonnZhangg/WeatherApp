@@ -48,37 +48,33 @@ class Body extends Component {
         .then(res => res.json())
         .then((data) => {
             // TODO: make a list that contains all the weather data then set that to this.state.weather
-            // var weatherList = [];
-            // var list = data.list;
+            var weatherList = [];
+            var list = data.list;
             
-            // for (var i = 0; i < list.length; i++){
-                // console.log(list[i]);
-            //     var str = list[i].dt_txt;
-            //     if (str.includes('12:00:00')){
-            //         weatherList.push(list[i]);
-            //     }
-            // }
+            for (var i = 0; i < list.length; i++){
+                console.log(list[i]);
+                var str = list[i].dt_txt;
+                if (str.includes('12:00:00')){
+                    weatherList.push(list[i]);
+                }
+            }
 
             var temp = [];
             var weatherDescription = [];
             var dates = [];
 
-            // for (var x = 0; x < weatherList.length; x++){
-            //     temp.push(weatherList[x].main.temp);
-            //     weatherDescription.push(weatherList[x].weather[0].main);
-            //     var dateStr = weatherList[x].dt_txt;
-            //     dateStr = dateStr.substring(0,10);
-            //     dates.push(dateStr);
-            // }
-            for (var i = 0; i < data.length; i++){
-                temp.push(data[i].temp);
-                weatherDescription.push(data[i].desc);
-                dates.push(data[i].date);
+            for (var x = 0; x < weatherList.length; x++){
+                temp.push(weatherList[x].main.temp);
+                weatherDescription.push(weatherList[x].weather[0].main);
+                var dateStr = weatherList[x].dt_txt;
+                dateStr = dateStr.substring(0,10);
+                dates.push(dateStr);
             }
+     
 
-            console.log(temp);
-            console.log(weatherDescription);
-            console.log(dates);
+            // console.log(temp);
+            // console.log(weatherDescription);
+            // console.log(dates);
             
             this.setState({
                 temp: temp,

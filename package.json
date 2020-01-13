@@ -1,5 +1,5 @@
 {
-  "homepage": "http://danielPeng-17.github.io/react-weather-app",
+  "homepage": "http://JasonnZhangg.github.io/WeatherApp",
   "name": "weather-app",
   "version": "0.1.0",
   "private": true,
@@ -34,6 +34,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.2.0"
   }
 }
